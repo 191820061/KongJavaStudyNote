@@ -9,8 +9,7 @@ public class Main {
         Scanner s = new Scanner(System.in);
         System.out.println("系统启动.....................");
         System.out.println("请输入数据存储文件路径。");
-        String path = s.next();
-        s.close();
+        String path = s.nextLine().trim().split("\\s+")[0];
         StudentManagementSystem system = new StudentManagementSystem(path);
         system.start();
     }

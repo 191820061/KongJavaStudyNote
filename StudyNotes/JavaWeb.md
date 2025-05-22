@@ -46,3 +46,19 @@ Postman是一款测试后端接口的应用程序。
 
 [SpringBoot获取查询参数](GetParameter.md)
 
+[SpringBoot关于响应](@ResponseBody.md)
+
+MVC架构是整个软件前后端分离的设计模式，三层架构是系统后端职责划分的架构模式。
+
+三层架构分为Controller,Dao,Service.
+
+controller:控制层，负责接收前端发送的请求，对请求进行处理并响应数据。
+
+service:业务逻辑层，处理具体的业务逻辑
+
+dao:数据访问层(Data Access Object)持久层，负责数据访问操作，包括数据的增删改查。
+
+[高内聚和低耦合](IOC&DI.md)
+
+
+

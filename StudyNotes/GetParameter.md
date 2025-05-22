@@ -1,6 +1,6 @@
 SpringBoot如何获取请求URL中的查询参数
 
-http://localhost:8080/hello?name=45类似这样的URL中?name=45的查询参数。查询参数必须以？开头这在RFC3986中进行了规范。/hello?name=45组成了URI(统一资源标识符)
+http://localhost:8080/hello?name=45类似这样的URL中?name=45的查询参数。查询参数必须以？开头这在RFC3986中进行了规范。
 
 ```java
 //传统方式获取参数，通过HttpServletRequest对象的getParameter方法
@@ -30,3 +30,29 @@ public String hello(
 }
 ```
 
+```java
+//使用实体类接收请求参数
+@RequestMapping("/info")
+public String getMessage(@ModelAttribute User user) {
+    return user.getName() + ' ' + user.getAge() + ' ' + user.getPhone() + ' ' + user.getAddress();
+}
+```
+
+```java
+//获取数组类型的请求参数
+@RequestMapping("/listParameter")
+public String getHobby(@RequestParam(value = "hobby") List<String> myHobby) {
+    return myHobby.toString();
+}
+```
+
+```java
+//获取路径参数
+@RequestMapping("/user/{id}")
+public String getUserId(@PathVariable Integer id) {
+    if (id != null) {
+        return "you id is " + id;
+    }
+    return "404";
+}
+```
